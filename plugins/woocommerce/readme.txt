@@ -169,6 +169,80 @@ WooCommerce comes with some sample data you can use to see how products look; im
 
 == Changelog ==
 
-= 9.3.0 2024-XX-XX =
+= 9.3.0 2024-09-10 =
+
+**WooCommerce**
+
+* Fix - Add a label to the product pagination for the woocommerce pagination
+* Fix - Add aria-label on View order button to aid in accessibility for screen readers
+* Fix - Avoid PHP warnings if `add-to-cart.php` template does not pass `aria-describedby_text`
+* Fix - Changed from using React.render to React.createRoot for payment methods promotion, shipping settings region zone as it has been deprecated since React 18
+* Fix - Changed from using React.render to React.createRoot for WCAdmin uses as it has been deprecated since React 18
+* Fix - CYS - Improve the error when a request fails due to permissions
+* Fix - CYS - Update the "show_on_front" setting to "posts" to avoid overriding the "page" template.
+* Fix - Display address card for virtual products if shopper's address is known
+* Fix - Enable skipped E2E tests for attributes #50143
+* Fix - Fix activating the installed subscription when the user has multiple active licenses for the same product.
+* Fix - Fix core profiler checkbox vertical alignment and border color
+* Fix - Fix e2e Google for WooCommerce strict mode violation error
+* Fix - Fixed placeholders in the classic cart shipping calculator to update with country selection.
+* Fix - Fixes a bug where some express payment buttons weren't being rendered correctly
+* Fix - Fix page titles of the cart and checkout page when using blocks and FSE themes.
+* Fix - Hide save changes button in main payments screen
+* Fix - Keep focus on shipping option input once selected
+* Fix - Prevent Store API orders being placed with empty state
+* Fix - Product Collection: Fix max price query to include prices less or equal to the given max value.
+* Fix - Product Collection: fix the preview if used in Products by specific Category or Tag
+* Fix - Reduce error noise in the user profile screen, by removing the requirement for custom fields to have a class attribute.
+* Fix - Update product order status colors to ensure accessible color contrasts
+* Add - Add an additional field for the email settings that sets the footer text color
+* Add - Add field for the email footer text color
+* Add - Add parameter to avoid attempting to create the logs directory if it doesn't exist
+* Add - Add Pattern button to no blocks view on the CYS assembler
+* Add - Add reactified main payments screen
+* Add - Add reactify-classic-payments-settings feature flag
+* Add - Implement server-side remote error logging
+* Add - Inform screen reader users when mini cart updates
+* Add - Integrate JS remote logging package in WooCommerce Admin
+* Add - Product Collection: Enable Context-Aware Previews by Adding `usesReference` to `registerProductCollection`
+* Add - Track frequency of unhandled JS errors with MC Stats
+* Add - Use MC Stats for PHP fatal error counting
+* Add - Use UTM parameters to link Tracks events from connect notice CTA and successful site connection
+* Update - Add abbreviations for fields GTIN, UPC, EAN, OR ISBN
+* Update - CYS - Add tests for the Full Composability feature.
+* Update - CYS - Run appropriate tests depending on the WordPress version.
+* Update - CYS: Improve opt-in flow fonts.
+* Update - CYS: Improve opt-in flow patterns.
+* Update - CYS: Improve tracking survey
+* Update - feat: add `aria-required` attributes to WC form fields
+* Update - Fixed log-out link behavior so that redirects work, and so that security nonces are automatically added to link in navigation menus.
+* Update - Renamed columns inside In-App Marketplace > My subscriptions and added action to turn auto-renewal on for a subscription
+* Update - Store API: Remove the need for nonces when using cart tokens. Remove deprecated X-WC-Store-API-Nonce header.
+* Update - Strip HTML tags from aria-label in wc_help_tip function
+* Update - Text adjustments on shipping zones settings page
+* Dev - Add unit tests for the product_add_publish track.
+* Dev - CI: introduce PHPUnit tests sharding.
+* Dev - CI: speedup assets size verification job execution time.
+* Dev - CYS - Document possible Intro pages
+* Dev - CYS: add E2E tests for fonts installation.
+* Dev - E2E tests: add a flaky test reporter for Core e2e tests
+* Dev - E2E tests: add environment reporter
+* Dev - E2E tests: removed Github reporter
+* Dev - E2E tests: Removed unnecessary pause in the test
+* Dev - Fix E2E tests SKU field id #49729
+* Dev - Monorepo: tweak Webpack loaders paths filtering for better build perfromance.
+* Dev - move part of checkout docs to main docs folder
+* Dev - Render a React placeholder for offline and WooCommerce Payments settings sections
+* Dev - Switch `render()` to `createRoot().render()` to use React 18 features.
+* Dev - Tests: moved api core tests as a suite in e2e-pw
+* Dev - Updated the workflow prompting for testing instructions to only run once (preventing double comments)
+* Dev - Update E2E tests for linked list and variation creation with new component changes.
+* Dev - Update WP version to 6.6 in Blocks wp-env config.
+* Tweak - allows the quantity selector on block cart page to render as readonly when editable is false
+* Performance - Improve performance of maybe_assign_default_product_cat by only dropping cache and term recounting if changes were made in the database
+* Enhancement - Add filter `woocommerce_is_store_page` to modify whether Coming Soon mode considers a URL a store page or not.
+* Enhancement - Add username in email reset-password link
+* Enhancement - Ensure `wccomHelper` data is only loaded on the Extensions page where it's needed.
+
 
 [See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/changelog.txt).
