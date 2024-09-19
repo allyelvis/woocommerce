@@ -169,6 +169,135 @@ WooCommerce comes with some sample data you can use to see how products look; im
 
 == Changelog ==
 
-= 9.4.0 2024-XX-XX =
+= 9.4.0 2024-10-08 =
+
+**WooCommerce**
+
+* Fix - Bust WC object cache on direct post meta update to prevent stale cache read.
+* Fix - Conditionally set new order email sent meta field
+* Fix - Default saved payment method is now respected by block checkout.
+* Fix - Deprecate single product block save #51153
+* Fix - Fix badge number fails to match the number of unfinished tasks
+* Fix - Fix bottom margin of last patterns
+* Fix - Fix duplicate spec evaluation in evaluate_specs()
+* Fix - Fix My Account block icon being too small when inserted via block hooks
+* Fix - Fix Settings Save button when WP List Tables are present
+* Fix - Fix site visibility badge style
+* Fix - Fix the order-items view for coupons, so we show the actually-used coupon info, if it exists.
+* Fix - Fix variation selector display issues on the front end #51023
+* Fix - Fix wc_admin_unsnooze_admin_notes events are being needlessly created
+* Fix - Hide payment recommendations when no extensions are available
+* Fix - Improve checkout page accessibility after removing heading level 1.
+* Fix - Improve icon aligment in Essential Header and Minimal Header patterns
+* Fix - Make Admin\API\Reports\Customers\DataStore::anonymize_customer accept an order instance as a parameter to ensure compatibility with the `woocommerce_privacy_remove_order_personal_data` hook.
+* Fix - Make Checkout block `coupons` filter consistent by always running.
+* Fix - Only log PTK error if no action has been scheduled
+* Fix - Prevent an error in the WC_Checkout class when WooCommerce has not been properly initialized yet
+* Fix - Product bulk edit: allow to restore original price and avoid fatal errors.
+* Fix - Product bulk edit: fix increasing & decreasing sale price when there was no previous sale.
+* Fix - Put site visibility badge behind the launch your store feature flag
+* Fix - Remove extra bottom padding in filters in the editor.
+* Fix - Remove title attribute from images in product slider.
+* Fix - Replace retired theme Nokul with Gizmo in the CYS experience
+* Fix - Trap focus inside the product gallery modal.
+* Fix - Update the logic that conditionally activates the compatibility layer in WooCommerce block templates so it detects blocks inside patterns
+* Fix - Use `get_filtered_ids` consistently in `reports/taxes` and `reports/taxes/stats` datastores
+* Add - Add endpoint title to the document title.
+* Add - Add new feature for a product data views page.
+* Add - Add react-powered main payments settings screen
+* Add - Product Collection - Implement Inspector control to change selected product
+* Add - Product Collection - Show product picker in Editor when collection requires a product but not available  <details> A collection can define if it requires a product context. This can be done using `usesReference` argument i.e. ```tsx __experimentalRegisterProductCollection({   ...,   usesReference: ['product'], ) ```  When product context doesn't exist in current template/page/post etc. then we show product picker in Editor. This way, merchant can manually provide a product context to the collection.
+* Add - Product Elements send a JS event when user attempts to view a product
+* Add - Provide screen readers with product sorting status message.
+* Add - Track data for font and color pairings including 'Create your own' option in CYS
+* Update - Added experimental delayed order creation block.
+* Update - Added Stripe tax in onboarding tax task
+* Update - Clean up 'Profile Wizard' code
+* Update - Clean up Purchase task
+* Update - Comment: Fix comment typos across various files.
+* Update - Consolidate Store API and Core account creation functions.
+* Update - E2E tests - skipping 11 tests for the Pressable website
+* Update - Ensure that active plugins shown in the System Status API endpoint actually exist
+* Update - Include API tests into test suites for Pressable and WPCOM.
+* Update - Move Pressable and WPCOM e2e runss to release-checks instead of daily-checks
+* Update - Product cards in the in-app marketplace show currency and billing period data dynamically, based on data received from WooCommerce.com
+* Update - Product Rating: hide reviews in the front end when disabled at store or product level.
+* Update - Refactor WooCommercePayments task to use woo payment gateway from `WC()->payment_gateways->payment_gateways()`
+* Update - Show payments recommendation when main settings element is found
+* Update - Update /customize-store tests, so they are passing against Pressable env.
+* Update - Update /merchant tests (first five files), so they are passing against Pressable env.
+* Update - Update /merchant tests (second five files), so they are passing against Pressable env.
+* Update - Update /merchant tests so they are passing against Pressable env.
+* Update - Update /shopper tests (first part), so they are passing against Pressable env.
+* Update - Update /shopper tests (second part), so they are passing against Pressable env.
+* Update - Update admin-* folders, so e2e tests are passing against Pressable env.
+* Update - Updated wording on the Cart/Checkout shipping sidebars
+* Update - Update storybook file format in support with Storybook 7 story indexer.
+* Update - Update the rest of /merchant tests so they are passing against Pressable env.
+* Update - Update webpack config to bundle in @wordpress/dataviews package.
+* Update - Update `activate-and-setup` e2e tests, so they are passing against Pressable env.
+* Update - Update `add-variable-product` e2e tests, so they are passing against Pressable env.
+* Update - Update `products/block-editor` e2e tests, so they are passing against Pressable env.
+* Dev - Add e2e tests to confirm that the store is in coming soon mode after completing the core profiler
+* Dev - Added doc blocks to conditionally fired hooks to better explain nuanced behavior
+* Dev - Add reporting of slow PHPUnit tests.
+* Dev - Coding standatds: fix PSR-4 naming violation in tests (part 1).
+* Dev - Coding standatds: fix PSR-4 naming violation in tests (part 2).
+* Dev - Convert with-reviews to TS #50890
+* Dev - CYS - Move the "ai/products" endpoint to woocommerce admin API.
+* Dev - CYS - Move the "private/patterns" endpoint to woocommerce admin API.
+* Dev - E2E tests: fix flakiness in page publishing action
+* Dev - Explicitly select the payment method on the customer payment page e2e test
+* Dev - Fix eslint warnings
+* Dev - Fix flaky remote logging PHP unit test
+* Dev - Fix pnpm version to 9.1.3 to avoid dependency installation issues.
+* Dev - Fix slow test for Reports
+* Dev - fix small lint errors and fix lint rule to make doc contribution easier
+* Dev - Made XState utils updateQueryParam generic so that it can be reused in other XState machines
+* Dev - Make Block Reference a public doc
+* Dev - Manage K6 version
+* Dev - Mark several Customize Your Store PHP classes as internal
+* Dev - On Sale Badge: Migrate to block.json
+* Dev - Product Image: migrate to block.json
+* Dev - Product Price: migrate to block.json
+* Dev - Remove @wooocommerce `Combobox` component that is no longer used.
+* Dev - Update docs
+* Dev - Updated webpack build script for wc admin so that the wp-admin-scripts are dynamically fetched from the fs instead of a hard list
+* Tweak - Fix typo in inline doc in woocommerce client, includes, and lib folders.
+* Tweak - Fix typos in plugins/woocommerce-blocks/docs
+* Tweak - Include group and product id properties in the `marketplace_product_card_clicked` Tracks event
+* Tweak - Log deprecation warnings for `Query` class usage.
+* Tweak - Minor fixes to product descriptions on the Extensions screen.
+* Tweak - Move collections e2e tests from product collection file to its own file
+* Tweak - Move register product collection tester e2e tests from product collection file to its own file
+* Tweak - Move the inspector controls e2e tests from product collection file to its own file
+* Tweak - On mobile, style order confirmation page details side by side
+* Tweak - Reenable remote logging feature by default
+* Tweak - Remove the usage of `ReportSummary`s `isRequesting` property as it has no effect.
+* Tweak - Remove titles on Extensions and Themes tabs in the marketplace
+* Tweak - Small visual tweaks to the express checkout area
+* Tweak - Update coming soon extensibility documentation
+* Tweak - Update footer design, add one more element to footer content and remove `woo-marketplace` copy at footer bottom.
+* Tweak - Update PHP unit tests to remove specific team names for generic names.
+* Tweak - Update product card content padding to 24px and add 0 margin bottom to product cards
+* Tweak - Update reset password e2e to use or locator to check reset status
+* Performance - Conditionally initialize block template compatibility classes
+* Performance - Don't update the script data transient for the same data
+* Performance - Only load local pickup methods on cart/checkout pages
+* Performance - Only run woocommerce_admin_shared_settings filter on admin requests
+* Performance - Refactor Country Specs to use 'in' operator
+* Performance - Remove relevancy ranking from FTS queries to improve performance.
+* Enhancement - Add 'Show tab title' attribute to the Product Details block
+* Enhancement - Add additional sizing units for product image block
+* Enhancement - Add filter for response of `wc_rest_should_load_namespace` function to allow loading namespaces.
+* Enhancement - Add filters for custom orderby query params for WC Analytics
+* Enhancement - Add phone number to FTS index to improve order searchability.
+* Enhancement - Enhance WooCommerce version checking for remote logging reliability
+* Enhancement - Improve the tabs focus style in the Product Details block with Minimal style variation
+* Enhancement - Move focus into coupon input if there is an error
+* Enhancement - Product Collection - Change cursor style of preview button to default
+* Enhancement - Product Collection: Don't render when empty unless the no results block is present.
+* Enhancement - Product SKU block: add editable prefixes and suffixes.
+
 
 [See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/changelog.txt).
