@@ -35,7 +35,7 @@
 		"@woocommerce/eslint-plugin": "workspace:*",
 		"eslint": "^8.55.0",
 		"globby": "^11.1.0",
-		"jscodeshift": "^0.13.1",
+		"jscodeshift": "^0.14.0",
 		"oclif": "^2.7.0",
 		"shx": "^0.3.4",
 		"ts-node": "^10.9.2",
