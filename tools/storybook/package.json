@@ -34,7 +34,7 @@
 		"@babel/runtime": "^7.23.5",
 		"@storybook/addon-a11y": "7.6.19",
 		"@storybook/addon-actions": "7.6.19",
-		"@storybook/addon-console": "^1.2.3",
+		"@storybook/addon-console": "^2.0.0",
 		"@storybook/addon-controls": "7.6.19",
 		"@storybook/addon-docs": "7.6.19",
 		"@storybook/addon-links": "7.6.19",
