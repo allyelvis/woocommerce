@@ -133,7 +133,7 @@
 		"@babel/core": "^7.23.5",
 		"@babel/runtime": "^7.23.5",
 		"@storybook/addon-console": "^1.2.3",
-		"@storybook/addon-docs": "7.6.19",
+		"@storybook/addon-docs": "7.6.21",
 		"@storybook/addon-links": "7.6.19",
 		"@storybook/react": "6.5.17-alpha.0",
 		"@testing-library/dom": "8.11.3",
